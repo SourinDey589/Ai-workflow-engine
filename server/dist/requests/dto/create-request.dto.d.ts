@@ -1,0 +1,5 @@
+export declare class CreateRequestDto {
+    name: string;
+    email: string;
+    message: string;
+}
