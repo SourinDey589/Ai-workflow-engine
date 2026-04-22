@@ -3,8 +3,8 @@ services:
     name: ai-workflow-api
     runtime: node
     rootDir: server
-    buildCommand: npm install && npm run build
-    startCommand: node dist/main
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: node dist/main.js
     envVars:
       - key: MONGODB_URI
         sync: false
@@ -12,6 +12,8 @@ services:
         sync: false
       - key: PORT
         value: 3001
+      - key: NPM_CONFIG_PRODUCTION
+        value: false
 
   - type: web
     name: ai-workflow-client
